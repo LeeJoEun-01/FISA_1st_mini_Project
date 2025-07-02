@@ -1,0 +1,53 @@
+20250702
+
+1. 메소드 구현 및 호출
+	- 데이터 타입 
+2. 생성자 구현 및 호출
+3. 다중 클래스로 개발 후 서로 호출 사용
+4. MVC pattern 구조의 클래스 형식 시작
+	- Spring / 장고 / Vue, React(front end framework)
+	
+	 ******
+	 
+	1. 데이터 타입
+		1. 기본 타입(primitive)(암기****)
+			- 8가지뿐, built in 타입, 소문자로만 되어있는 키워드들 no String
+			- 형태
+				정수형/ 문자형/ 실수형/ 논리형
+				byte (8bit), short(16bit), int(32bit), long(64bit)/ 
+				char(16bit)/ 
+				float(32bit), 
+				double(64bit)/ 
+				boolean(8bit)
+				
+		2. 객체 타입 (Reference)
+			- (non-primitive)
+			- API(library) 제공타입 & 사용자 정의 타입
+				: 반드시 class 또는 interface라는 것으로 존재해야함
+			- 예 :String - JDK 내부에서 제공받은 타입
+				 Person - 사용자 정의 타입
+
+2. MVC 패턴 
+	- Model - 네모. (core, biz)(*.java)
+			:순수자바 코드로 개발
+	- View - 모서리 접은 네모. 정사각형 종이 한족 접은 모양
+	:화면처리 언어로 개발(html/cs//java/JSP)
+	1. 브라우저 자체에서 실행되는 언어:html/css/javascript
+	2. 브라우저에 자바 데이터를 표현하기 위한 언어
+			:실행은 서버(tomcat) 내부에서 실행
+			:java server page[JSP] : *.jsp
+	- Controller - 오각형 
+		servlet특징
+			- 자바 코드로 개발
+			- 정해진 규칙
+			- jsp의 원조
+			- spring은 자체적으로 Servlet을 확장해서 main controller 기능 제공
+	
+	클라이언트 request->view-> controller->model->db->응답된 값 controller에게->failView/successView-> 클라이언트
+	
+	3. CRUD
+	CREATE 	: db관점 , 존재하는 table에 insert		중복 데이터 불허 즉 무결성 검증
+	READ 	: db관점 , 데이터 검색, select, query 데이터 있다면 검색, 없다면 검색 불가
+	UPDATE 	: db관점 , 데이터 수정 				존재할 경우 수정, 미존재할 경우 수정 불가
+	DELETE	: db관점 , 데이터 삭제 				존재할 경우 삭제, 미존재할 경우 삭제 불가
+	
