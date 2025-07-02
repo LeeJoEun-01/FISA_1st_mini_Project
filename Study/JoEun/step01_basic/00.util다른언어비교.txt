@@ -1,0 +1,28 @@
+Python
+- 파이썬 환경에서 실행되는 인터프리터 언어
+- 컴파일 과정 즉 언어 변환 과정이 없음
+
+1. 타입
+	name = '조은'
+	name = "조은"
+	타입 확인시 - string
+	
+	name = 3
+	타입 확인시 - int
+	
+JavaScript
+- 브라우저 내에서 실행되는 인터프리터 언어
+- 컴파일 과정 즉 언어 변환 과정 없음
+
+1. 타입
+	name = '조은';
+	name = "조은";
+	타입 확인시 - string
+	
+	var name = '조은';
+	let name = '조은';
+	const name = '조은';
+	- 요새는 let, const 선호
+	
+	name = 3;
+	타입 확인시 - number
