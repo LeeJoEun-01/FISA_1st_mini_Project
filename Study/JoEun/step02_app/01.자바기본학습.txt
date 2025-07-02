@@ -1,0 +1,57 @@
+20250702
+
+1. 메소드 구현 및 호출
+	- 데이터 타입
+2. 생성자 구현 및 호출
+3. 다중 클래스로 개발 후 서로 호출 사용
+4. MVC pattern 구조의 클래스 형식 시작
+	- spring / 장고 / Vue, React(front end framework)
+	
+------
+
+1. 데이터 타입
+	1. 기본 타입
+		- 8가지뿐, built in 타입
+		- 형태
+			(정수형/문자형/실수형/논리형)
+			byte(8bit),short(16),int(32),long(64)
+			char(16bit)
+			float(32), double(64)
+			boolean(8bit)
+			
+		EX. String(대문자로 시작하는 타입은 기본 타입이 아니다!)
+		
+	2. 객체 타입 (Reference)
+		- non-primitive 타입
+		- API(library) 제공타입 & 사용자 정의 타입
+		  : 반드시 class 또는 interface 라는 것으로 존재해야 한다.
+		  EX. String(JDK 내부에서 제공), Person(사용자 정의)
+		
+-------
+
+2. MVC pattern
+- Model : 순수자바 코드로 개발 (*.java)
+- View : 화면처리 언어로 개발(html/css/javaScript/jsp)
+	1. 브라우저 자체에서 실행되는 언어 (html/css/javaScript)
+	2. 브라우저에 자바 데이터를 표현하기 위한 언어
+		: 실행은 서버(tomcat)내부에서 실행 : *.jsp
+		: java server page[jsp]
+- Controller : servlet으로 개발
+	servlet 특징
+		- 자바 코드로 개발
+		- 정해진 스팩(특정 클래스 상속 필수)
+		- jsp의 원조
+		- Spring은 자체적으로 Servlet을 확장해서 main controller 기능 제공
+
+--------
+
+3. CRUD
+	- Create : (db 관점에서 존재하는 table에 insert)
+			   중복 데이터 불허(=무결성 검증)
+	- Read : (db 관점, 데이터 검색, select, query)
+			   데이터가 있다면 검색, 없다면 검색 불가
+	- Update : (db 관점, 데이터 수정)
+				존재할 경우 수정, 미존재할 경우 수정 불가
+	- Delete : (db 관점, 데이터 삭제)
+				존재할 경우 삭제, 미존재할 경우 삭제 불가
+		
