@@ -1,0 +1,20 @@
+package view;
+
+import java.util.Scanner;
+
+public class FavFoodView {
+	public static void favFoodMatch() {
+		Scanner sc = new Scanner(System.in);
+
+        System.out.println("***************************************");
+        System.out.println("*        🍽️ 최애 음식 매칭 🍽️         *");
+        System.out.println("***************************************");
+        System.out.println();
+        System.out.print("찾고 싶은 음식 이름을 입력하세요: ");
+
+        String foodName = sc.nextLine();
+        
+        
+	}
+    
+}

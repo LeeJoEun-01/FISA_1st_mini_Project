@@ -1,0 +1,30 @@
+package model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Student extends Person {
+	String mbti;
+	String[] hates;
+	String[] favorites;
+	String[] study;
+	String[] jobs;
+	String[] food;
+
+	public Student(String name, int age, String mbti, String[] hates, String[] favorites, String[] study, String[] jobs,
+			String[] food) {
+		super(name, age); // 부모 생성자 호출로 name, age 초기화
+		this.mbti = mbti;
+		this.hates = hates;
+		this.favorites = favorites;
+		this.study = study;
+		this.jobs = jobs;
+		this.food = food;
+	}
+}

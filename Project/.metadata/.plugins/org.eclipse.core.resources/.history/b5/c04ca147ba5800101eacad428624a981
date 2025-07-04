@@ -1,0 +1,53 @@
+package view;
+
+import java.util.Scanner;
+import model.Model;
+import model.Student;
+
+public class MenuView {
+	public static void displayMenu() throws Exception {
+		Scanner sc = new Scanner(System.in);
+		// 현재 사용자 이름 가져와서 인사
+		Student currentUser = Model.getCurrentUser();
+		
+		while(true) {
+			System.out.println(currentUser.getName() + "님 안녕하세요!");
+			System.out.println("원하시는 메뉴를 선택해주세요.");
+			System.out.println();
+	        System.out.println("╔══════════════════════════════╗");
+	        System.out.println("║   💌 친해지길 바라 - 메인 메뉴 💌   ║");
+	        System.out.println("╠══════════════════════════════╣");
+	        System.out.println("║ 1. 오늘의 친구 추천               ║");
+	        System.out.println("║ 2. 오늘의 궁합 보기               ║");
+	        System.out.println("║ 3. MBTI로 친구 찾기              ║");
+	        System.out.println("║ 4. 나의 스터디 매칭               ║");
+	        System.out.println("║ 5. 최애 음식 매칭                ║");
+	        System.out.println("║ 6. 종료                        ║");
+	        System.out.println("╚══════════════════════════════╝");
+	        System.out.println();
+	        System.out.print("메뉴 번호를 선택해주세요 (1~6): ");
+	
+	        int input = sc.nextInt();
+	        
+	        // 입력한 수에 따른 분기
+	        switch(input) {
+		        case 1:
+		        	RecommandView.show(currentUser);
+		        	break;
+		        case 2:
+		        	MatchView.inputFriendNameView();
+		        	break;
+		        case 3:
+		        	MbtiView.mbtiFriends();
+		        	break;
+		        case 4:
+			        StudyView.StudyNameInput();
+			        break;
+		        case 5:
+		        	FavFoodView.favFoodMatch();
+		        	break;
+	
+	        }
+		}
+	}
+}

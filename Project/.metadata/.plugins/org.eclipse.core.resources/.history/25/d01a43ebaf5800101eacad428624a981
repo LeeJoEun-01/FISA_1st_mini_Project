@@ -1,0 +1,24 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Model;
+import model.Student;
+
+public class FavFoodMatchController {
+
+	public static List<String> fintStudentsByFood(String foodName) throws Exception{
+		List<String> matched = new ArrayList<>();
+		
+		for (Student s : Model.getModel().getStudents()) {
+			for (String food : s.getFood()) {
+				if (food.equals(foodName)) {
+					matched.add(s.getName());
+					break;
+				}
+			}
+		}
+		return matched;
+	}
+}
