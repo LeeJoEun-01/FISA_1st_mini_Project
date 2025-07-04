@@ -1,8 +1,14 @@
 package view;
 
+import java.util.Scanner;
+
+import controller.MainController;
+
 public class StartView {
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
 		//이름을 입력해 주세요
 		System.out.println("***************************************\r\n"+ "");
 		System.out.println("*          👯 친해지길 바라 👯         *");
@@ -13,9 +19,9 @@ public class StartView {
 		//입력한 이름 매개변수로 사용자 찾는 메소드 호출		
 		System.out.println(">>[]");
 		
-		
 		//이름 입력
-		//이름변수
+		String name = sc.nextLine();
+		MainController.handleNameInput(name);
 	}
 
 }

@@ -2,10 +2,11 @@ package view;
 
 import java.util.Scanner;
 import model.Databases;
+import model.Student;
 
 public class MenuView {
 	public static void displayMenu() {
-		
+		Scanner sc = new Scanner(System.in);
 		// 현재 사용자 이름 가져와서 인사
 		Student currentUser = Databases.getCurrentUser();
 		
@@ -25,7 +26,15 @@ public class MenuView {
         System.out.println();
         System.out.print("메뉴 번호를 선택해주세요 (1~6): ");
 
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        int input = sc.nextInt();
+        
+        // 입력한 수에 따른 분기
+        switch(input) {
+	        case 1:
+	        	// 오늘의 친구 추천
+	        	break;
+	        case 2:
+	        	// 
+        }
 	}
 }

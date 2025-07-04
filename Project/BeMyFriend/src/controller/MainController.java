@@ -23,7 +23,7 @@ public class MainController {
 			}
 			
 			// 찾으면 currentUser로 저장
-			Database.setCurrentUser(found);
+			Databases.setCurrentUser(found);
 			MenuView.displayMenu();
 			
 		} catch (Exception e) {
