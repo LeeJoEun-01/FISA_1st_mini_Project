@@ -32,6 +32,7 @@ public class Model {
 			return students;
 		}
 	}
+ 
 	
 	public String[] searchStudy(String studyName) throws Exception {
 		// 매개변수로 스터디 이름을 받아서

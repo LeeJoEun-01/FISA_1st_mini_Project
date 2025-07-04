@@ -31,7 +31,7 @@ public class MenuView {
         // 입력한 수에 따른 분기
         switch(input) {
 	        case 1:
-	        	// 오늘의 친구 추천
+	        	RecommandView.show(currentUser);
 	        	break;
 	        case 2:
 	        	MatchView.inputFriendNameView();
@@ -45,6 +45,7 @@ public class MenuView {
 	        case 5:
 	        	FavFoodView.favFoodMatch();
 	        	break;
+
         }
 	}
 }
