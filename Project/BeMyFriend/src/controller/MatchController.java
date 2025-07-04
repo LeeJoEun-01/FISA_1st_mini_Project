@@ -51,7 +51,7 @@ public class MatchController {
 				}
 			}
 		}
-		int favTotal = me.getFavorites().length + friend.getFavorites().length;
+		int favTotal = me.getFavorites().size() + friend.getFavorites().size();
 		double favPercent = ((double) favCommon / favTotal) * 10;
 		score += favPercent;
 		
@@ -64,7 +64,7 @@ public class MatchController {
 				}
 			}
 		}
-		int hateTotal = me.getHates().length + friend.getHates().length;
+		int hateTotal = me.getHates().size() + friend.getHates().size();
 		double hatePercent = ((double) hateCommon / hateTotal) * 10;
 		score += hatePercent;
 		
@@ -77,7 +77,7 @@ public class MatchController {
 				}
 			}
 		}
-		int foodTotal = me.getFood().length + friend.getFood().length;
+		int foodTotal = me.getFood().size() + friend.getFood().size();
 		double foodPercent = ((double) favFood / foodTotal) * 10;
 		score += foodPercent;
 			

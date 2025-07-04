@@ -5,12 +5,14 @@ import view.MenuView;
 import model.Model;
 
 public class MainController {
+	
 	public static void handleNameInput(String name) {
 		Student found = null;
 		
 		try {
 			// 이름으로 기존 학생 db에서 사용자 검색
-			for (Student s : Model.getModel().getStudents()) {
+			Student[] datas = Model.getModel().getStudents();
+			for (Student s : datas) {
 				if (s.getName().equals(name)) {
 					found = s;
 					break;
@@ -27,6 +29,7 @@ public class MainController {
 			MenuView.displayMenu();
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 		
