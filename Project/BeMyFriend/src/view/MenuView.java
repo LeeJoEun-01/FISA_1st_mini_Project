@@ -36,9 +36,13 @@ public class MenuView {
 	        case 2:
 	        	MatchView.inputFriendNameView();
 	        	break;
+	        case 4:
+		        StudyView.StudyNameInput();
+		        break;
 	        case 5:
 	        	FavFoodView.favFoodMatch();
 	        	break;
+
         }
 	}
 }
