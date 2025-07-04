@@ -10,7 +10,7 @@ public class MenuView {
 		// 현재 사용자 이름 가져와서 인사
 		Student currentUser = Databases.getCurrentUser();
 		
-		System.out.println(currentUser.name + "님 안녕하세요!");
+		System.out.println(currentUser.getName() + "님 안녕하세요!");
 		System.out.println("원하시는 메뉴를 선택해주세요.");
 		System.out.println();
         System.out.println("╔══════════════════════════════╗");

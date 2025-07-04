@@ -1,8 +1,9 @@
 package controller;
 
-import model.Databases;
 import model.Student;
 import view.MenuView;
+import model.Databases;
+import model.Model;
 
 public class MainController {
 	public static void handleNameInput(String name) {
@@ -10,7 +11,7 @@ public class MainController {
 		
 		try {
 			// 이름으로 기존 학생 db에서 사용자 검색
-			for (Student s : Databases.getStudents()) {
+			for (Student s : Model.getModel().getStudents()) {
 				if (s.getName().equals(name)) {
 					found = s;
 					break;
