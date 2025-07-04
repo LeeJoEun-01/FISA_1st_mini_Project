@@ -70,7 +70,4 @@ public class Model {
 		return studyGroup;
 	}
 	
-	
-	
-	
 }

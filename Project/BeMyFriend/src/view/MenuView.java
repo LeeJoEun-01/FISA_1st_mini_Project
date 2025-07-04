@@ -5,7 +5,7 @@ import model.Model;
 import model.Student;
 
 public class MenuView {
-	public static void displayMenu() {
+	public static void displayMenu() throws Exception {
 		Scanner sc = new Scanner(System.in);
 		// 현재 사용자 이름 가져와서 인사
 		Student currentUser = Model.getCurrentUser();
@@ -35,6 +35,9 @@ public class MenuView {
 	        	break;
 	        case 2:
 	        	MatchView.inputFriendNameView();
+	        	break;
+	        case 3:
+	        	MbtiView.mbtiFriends();
 	        	break;
 	        case 4:
 		        StudyView.StudyNameInput();
