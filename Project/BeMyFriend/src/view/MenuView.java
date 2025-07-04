@@ -35,6 +35,10 @@ public class MenuView {
 	        	break;
 	        case 2:
 	        	MatchView.inputFriendNameView();
+	        	break;
+	        case 5:
+	        	FavFoodView.favFoodMatch();
+	        	break;
         }
 	}
 }
