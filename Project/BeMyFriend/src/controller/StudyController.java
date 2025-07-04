@@ -1,0 +1,20 @@
+package controller;
+
+import model.Model;
+import view.FailView;
+import view.StudyView;
+
+public class StudyController {
+	private static final Model model = Model.getModel();
+	
+	public static void searchStudy(String studyName) {
+		String[] data = null;
+		try {
+			data = model.searchStudy(studyName);
+			StudyView.print(studyName, data);
+		} catch (Exception e) {
+//			e.printStackTrace();
+			FailView.print(e.getMessage());
+		}
+	}
+}
