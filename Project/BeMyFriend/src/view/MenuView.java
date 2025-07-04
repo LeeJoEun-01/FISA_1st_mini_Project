@@ -1,14 +1,14 @@
 package view;
 
 import java.util.Scanner;
-import model.Databases;
+import model.Model;
 import model.Student;
 
 public class MenuView {
 	public static void displayMenu() {
 		Scanner sc = new Scanner(System.in);
 		// 현재 사용자 이름 가져와서 인사
-		Student currentUser = Databases.getCurrentUser();
+		Student currentUser = Model.getCurrentUser();
 		
 		System.out.println(currentUser.getName() + "님 안녕하세요!");
 		System.out.println("원하시는 메뉴를 선택해주세요.");

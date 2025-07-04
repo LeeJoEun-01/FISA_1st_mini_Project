@@ -2,7 +2,6 @@ package controller;
 
 import model.Student;
 import view.MenuView;
-import model.Databases;
 import model.Model;
 
 public class MainController {
@@ -24,7 +23,7 @@ public class MainController {
 			}
 			
 			// 찾으면 currentUser로 저장
-			Databases.setCurrentUser(found);
+			Model.setCurrentUser(found);
 			MenuView.displayMenu();
 			
 		} catch (Exception e) {
