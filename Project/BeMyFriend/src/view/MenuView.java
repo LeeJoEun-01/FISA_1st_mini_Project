@@ -39,6 +39,7 @@ public class MenuView {
 	        	break;
 	        case 4:
 		        StudyView.StudyNameInput();
+		        break;
         }
 	}
 }
