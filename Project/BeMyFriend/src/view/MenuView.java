@@ -1,6 +1,9 @@
 package view;
 
 import java.util.Scanner;
+
+import controller.MainController;
+import controller.RecommandController;
 import model.Model;
 import model.Student;
 
@@ -32,6 +35,7 @@ public class MenuView {
         switch(input) {
 	        case 1:
 	        	// 오늘의 친구 추천
+	        	RecommandView.show(currentUser);
 	        	break;
 	        case 2:
 	        	// 
