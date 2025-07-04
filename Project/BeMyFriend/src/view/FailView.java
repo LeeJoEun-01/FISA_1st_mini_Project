@@ -3,9 +3,8 @@ package view;
 import model.Student;
 
 public class FailView {
-
-	public static void print (String failMsg) {
 	
+	public static void print(String failMsg) {
+		System.out.println(failMsg);
 	}
-	
 }

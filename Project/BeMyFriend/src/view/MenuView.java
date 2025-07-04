@@ -34,9 +34,16 @@ public class MenuView {
 	        	// 오늘의 친구 추천
 	        	break;
 	        case 2:
-	        	// 
+	        	MatchView.inputFriendNameView();
+	        	break;
 	        case 3:
 	        	MbtiView.mbtiFriends();
+	        	break;
+	        case 4:
+		        StudyView.StudyNameInput();
+		        break;
+	        case 5:
+	        	FavFoodView.favFoodMatch();
 	        	break;
         }
 	}

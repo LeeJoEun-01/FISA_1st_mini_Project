@@ -33,4 +33,40 @@ public class Model {
 		}
 	}
 	
+	public String[] searchStudy(String studyName) throws Exception {
+		// 매개변수로 스터디 이름을 받아서
+		// 해당 스터디를 희망하는 사람의 이름을 찾아준다.
+		
+		Student [] students = db.getStudents();
+		
+		// 해당 스터디를 희망하는 사람의 수
+		int count = 0;
+		for(Student stu: students) {
+			for(String s: stu.getStudy()) {
+				if(s.equals(studyName)) {
+					count ++;
+					break;
+				}
+			}
+		}
+		
+		if (count == 0) {
+			throw new Exception(studyName+" 스터디를 희망하는 사람이 없습니다.");
+		}
+		
+		int index = 0;
+		String [] studyGroup = new String[count];
+		for(Student stu: students) {
+			for(String s: stu.getStudy()) {
+				if(s.equals(studyName)) {
+					studyGroup[index] = stu.getName();
+					index ++;
+					break;
+				}
+			}
+		}
+		
+		return studyGroup;
+	}
+	
 }
