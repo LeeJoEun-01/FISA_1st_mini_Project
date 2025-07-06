@@ -159,3 +159,54 @@ src/
 프로젝트에 기여하실 분들은 자유롭게 **이슈와 PR**을 남겨주세요.
 
 👯 **함께 친해지길 바라~!**
+
+---
+
+## 📝 회고- 관심 스터디 주제를 기반으로 추천 친구를 보여줍니다.
+
+---
+
+### 5. 최애 음식 매칭
+
+- 특정 음식을 좋아하는 친구를 찾을 수 있습니다.
+
+---
+
+## 🗂️ 담당자 및 역할
+
+| 팀원  | GitHub                                                   | 담당 기능              | 프로필 사진                                                    |
+|:---:|:--------------------------------------------------------:|:------------------:|:---------------------------------------------------------:|
+| 이제현 | [github.com/lyjh98](https://github.com/lyjh98)           | 오늘의 친구 추천          | <img src="https://github.com/lyjh98.png" width="80">      |
+| 임유진 | [github.com/imewuzin](https://github.com/imewuzin)       | 이름 궁합 보기, 최애 음식 매칭 | <img src="https://github.com/imewuzin.png" width="80">    |
+| 이정이 | [github.com/2jeong2](https://github.com/2jeong2)         | MBTI로 친구 찾기        | <img src="https://github.com/2jeong2.png" width="80">     |
+| 이조은 | [github.com/LeeJoEun-01](https://github.com/LeeJoEun-01) | 나의 스터디 매칭          | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
+
+---
+
+## 🌱 학습 목표
+
+✅ Git으로 협업 연습 및 코드 리뷰  
+✅ Java OOP 복습 및 예외 처리  
+✅ Lombok 애노테이션 (@Getter, @Setter 등)  
+✅ MVC 설계 패턴의 실전 적용  
+✅ 자바 콘솔 기반 사용자 인터페이스 제작
+
+---
+
+## 💻 개발 환경
+
+- Java 17+
+- Git Bash
+- GitHub 협업
+- Lombok
+
+---
+
+## 🌟 사용 예시
+
+```
+╔════════════════════════════════════════════╗
+║           👯 친해지길 바라 👯             ║
+║                                            ║
+║   반 친구들과 더 가까워지고 싶나요?        ║
+║    오늘은 어떤 친은
