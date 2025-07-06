@@ -42,21 +42,22 @@
 
 ```
 src/
-controller/
-MainController.java
-MatchController.java
-RecommandController.java
-MbtiController.java
-StudyController.java
-model/
-Person.java
-Student.java
-Databases.java
-view/
-StartView\.java
-MenuView\.java
-SuccessView\.java
-FailView\.java
+├── controller/
+│   ├── MainController.java
+│   ├── MatchController.java
+│   ├── RecommandController.java
+│   ├── MbtiController.java
+│   └── StudyController.java
+├── model/
+│   ├── Person.java
+│   ├── Student.java
+│   └── Databases.java
+└── view/
+    ├── StartView.java
+    ├── MenuView.java
+    ├── SuccessView.java
+    └── FailView.java
+
 ```
 
 ---
@@ -98,10 +99,10 @@ FailView\.java
 
 | 팀원  | GitHub                                                   | 담당 기능              | 프로필 사진                                                    |
 |:---:|:--------------------------------------------------------:|:------------------:|:---------------------------------------------------------:|
-| 제현님 | [github.com/lyjh98](https://github.com/lyjh98)           | 오늘의 친구 추천          | <img src="https://github.com/lyjh98.png" width="80">      |
-| 유진님 | [github.com/imewuzin](https://github.com/imewuzin)       | 이름 궁합 보기, 최애 음식 매칭 | <img src="https://github.com/imewuzin.png" width="80">    |
-| 정이님 | [github.com/2jeong2](https://github.com/2jeong2)         | MBTI로 친구 찾기        | <img src="https://github.com/2jeong2.png" width="80">     |
-| 조은님 | [github.com/LeeJoEun-01](https://github.com/LeeJoEun-01) | 나의 스터디 매칭          | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
+| 이제현 | [github.com/lyjh98](https://github.com/lyjh98)           | 오늘의 친구 추천          | <img src="https://github.com/lyjh98.png" width="80">      |
+| 임유진 | [github.com/imewuzin](https://github.com/imewuzin)       | 이름 궁합 보기, 최애 음식 매칭 | <img src="https://github.com/imewuzin.png" width="80">    |
+| 이정이 | [github.com/2jeong2](https://github.com/2jeong2)         | MBTI로 친구 찾기        | <img src="https://github.com/2jeong2.png" width="80">     |
+| 이조은 | [github.com/LeeJoEun-01](https://github.com/LeeJoEun-01) | 나의 스터디 매칭          | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
 
 ---
 
