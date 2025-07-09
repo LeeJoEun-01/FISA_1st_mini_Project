@@ -18,6 +18,16 @@
 등 재미 요소를 결합했습니다.
 
 ---
+## 🗂️ 담당자 및 역할
+
+| 팀원  | GitHub                                                   | 담당 기능              | 프로필 사진                                                    |
+|:---:|:--------------------------------------------------------:|:------------------:|:---------------------------------------------------------:|
+| 이제현 | [github.com/lyjh98](https://github.com/lyjh98)           | 오늘의 친구 추천          | <img src="https://github.com/lyjh98.png" width="80">      |
+| 임유진 | [github.com/imewuzin](https://github.com/imewuzin)       | 이름 궁합 보기, 최애 음식 매칭 | <img src="https://github.com/imewuzin.png" width="80">    |
+| 이정이 | [github.com/2jeong2](https://github.com/2jeong2)         | MBTI로 친구 찾기        | <img src="https://github.com/2jeong2.png" width="80">     |
+| 이조은 | [github.com/LeeJoEun-01](https://github.com/LeeJoEun-01) | 나의 스터디 매칭          | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
+
+---
 
 ## ✍️ 데이터 수집 과정
 
@@ -97,17 +107,6 @@ src/
 
 ---
 
-## 🗂️ 담당자 및 역할
-
-| 팀원  | GitHub                                                   | 담당 기능              | 프로필 사진                                                    |
-|:---:|:--------------------------------------------------------:|:------------------:|:---------------------------------------------------------:|
-| 이제현 | [github.com/lyjh98](https://github.com/lyjh98)           | 오늘의 친구 추천          | <img src="https://github.com/lyjh98.png" width="80">      |
-| 임유진 | [github.com/imewuzin](https://github.com/imewuzin)       | 이름 궁합 보기, 최애 음식 매칭 | <img src="https://github.com/imewuzin.png" width="80">    |
-| 이정이 | [github.com/2jeong2](https://github.com/2jeong2)         | MBTI로 친구 찾기        | <img src="https://github.com/2jeong2.png" width="80">     |
-| 이조은 | [github.com/LeeJoEun-01](https://github.com/LeeJoEun-01) | 나의 스터디 매칭          | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
-
----
-
 ## 🌱 학습 목표
 
 ✅ Git으로 협업 연습 및 코드 리뷰  
@@ -161,18 +160,6 @@ src/
 프로젝트에 기여하실 분들은 자유롭게 **이슈와 PR**을 남겨주세요.
 
 👯 **함께 친해지길 바라~!**
-
----
-
-## 📝 회고
-- 이제현
-- 임유진
-- 이정이
-- 이조은:---:|:--------------------------------------------------------:|:------------------:|:---------------------------------------------------------:|
-| 이제현 | [github.com/lyjh98](https://github.com/lyjh98)           | 오늘의 친구 추천          | <img src="https://github.com/lyjh98.png" width="80">      |
-| 임유진 | [github.com/imewuzin](https://github.com/imewuzin)       | 이름 궁합 보기, 최애 음식 매칭 | <img src="https://github.com/imewuzin.png" width="80">    |
-| 이정이 | [github.com/2jeong2](https://github.com/2jeong2)         | MBTI로 친구 찾기        | <img src="https://github.com/2jeong2.png" width="80">     |
-| 이조은 | [github.com/LeeJoEun-01](https://github.com/LeeJoEun-01) | 나의 스터디 매칭          | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
 
 ---
 
