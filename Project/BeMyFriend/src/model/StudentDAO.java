@@ -203,4 +203,38 @@ public class StudentDAO {
 
 	    return score;
 	}
+
+    public static Student getRandomStudent() throws Exception {
+    	Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Student friend = null;
+		
+        try {
+        		conn = DBUtil.getConnection();
+        		pstmt = conn.prepareStatement("SELECT stdno, name, age, mbti, hates, favorites, study, jobs, food FROM (SELECT * FROM student ORDER BY DBMS_RANDOM.VALUE ) WHERE ROWNUM = 1 ");
+     	        rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+            	 friend = new Student(
+    	                rs.getString("name"),
+    	                rs.getInt("age"),
+    	                rs.getString("mbti"),
+    	                rs.getString("hates").split(","),
+    	                rs.getString("favorites").split(","),
+    	                rs.getString("study").split(","),
+    	                rs.getString("jobs").split(","),
+    	                rs.getString("food").split(",")
+    	            );
+            } else {
+                throw new Exception("추천할 학생이 없어요 ㅠㅠ");
+            }
+
+        } catch (SQLException e) {
+            throw new Exception("DB 오류: " + e.getMessage());
+        }
+		return friend;
+    }
 }
+	
+
