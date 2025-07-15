@@ -1,7 +1,0 @@
-INDEX VERSION 1.134+C:\Users\1-20\Desktop\FISA_1st_mini_Project\Project\.metadata\.plugins\org.eclipse.jdt.core
-1569116738.index
-3072584131.index
-984064641.index
-3178276681.index
-3449802606.index
-1865797976.index

@@ -2,7 +2,6 @@ package controller;
 
 import model.Student;
 import view.MenuView;
-import model.Model;
 
 public class MainController {
 	

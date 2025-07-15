@@ -1,14 +1,14 @@
 package view;
 
 import java.util.Scanner;
-import model.Model;
+import model.StudentDAO;
 import model.Student;
 
 public class MenuView {
 	public static void displayMenu() throws Exception {
 		Scanner sc = new Scanner(System.in);
 		// 현재 사용자 이름 가져와서 인사
-		Student currentUser = Model.getCurrentUser();
+		Student currentUser = StudentDAO.getAllStudent();
 		
 		while(true) {
 			System.out.println(currentUser.getName() + "님 안녕하세요!");
@@ -32,19 +32,19 @@ public class MenuView {
 	        // 입력한 수에 따른 분기
 	        switch(input) {
 		        case 1:
-		        	RecommandView.show(currentUser);
+//		        	RecommandView.show(currentUser);
 		        	break;
 		        case 2:
-		        	MatchView.inputFriendNameView();
+//		        	MatchView.inputFriendNameView();
 		        	break;
 		        case 3:
-		        	MbtiView.mbtiFriends();
+//		        	MbtiView.mbtiFriends();
 		        	break;
 		        case 4:
 			        StudyView.StudyNameInput();
 			        break;
 		        case 5:
-		        	FavFoodView.favFoodMatch();
+//		        	FavFoodView.favFoodMatch();
 		        	break;
 		        case 6:
 		        	System.out.println("프로그램을 종료합니다. 안녕히 가세요!");
