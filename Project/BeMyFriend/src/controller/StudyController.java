@@ -13,7 +13,11 @@ public class StudyController {
 		ArrayList<String> data = null;
 		try {
 			data = model.getStudyWithMe(studyName);
-			StudyView.print(studyName, data);
+			if (data.size() == 0) {
+				FailView.print("자신을 제외하고 해당 스터디를 원하는 사람이 없습니다. ㅜㅅㅜ");
+			} else {
+				StudyView.print(studyName, data);				
+			}
 		} catch (Exception e) {
 //			e.printStackTrace();
 			FailView.print(e.getMessage());

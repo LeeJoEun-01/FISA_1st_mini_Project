@@ -96,8 +96,10 @@ public class StudentDAO {
 		ArrayList<String> all = null;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("SELECT name FROM student WHERE DBMS_LOB.INSTR(study, ?) > 0");
+			Student me = StudentDAO.getCurrentUser();
+			pstmt = conn.prepareStatement("SELECT name FROM student WHERE DBMS_LOB.INSTR(study, ?) > 0 and name != ?");
 			pstmt.setString(1, study); //첫번째 물음표에 deptno값 대입 의미
+			pstmt.setString(2, me.getName());
 			rs = pstmt.executeQuery(); // 실제 db에 select 수행
 						
 			all = new ArrayList<>(); //10개의 메모리 증가하는 동적 메모리 생성
