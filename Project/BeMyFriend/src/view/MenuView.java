@@ -1,8 +1,8 @@
 package view;
 
-import model.Student;
 import model.StudentDAO;
 import util.ConsoleScanner;
+import model.Student;
 
 public class MenuView {
 	public static void displayMenu() {
@@ -28,14 +28,14 @@ public class MenuView {
 		    System.out.println("║ 9. 종료                       ║");
 		    System.out.println("╚══════════════════════════════╝");
 		    System.out.println();
-		    System.out.print("메뉴 번호를 선택해주세요 (1~6): ");
+		    System.out.print("메뉴 번호를 선택해주세요 (1~9): ");
 			int input = ConsoleScanner.SCANNER.nextInt();
 			ConsoleScanner.SCANNER.nextLine();
 		    
 		    // 입력한 수에 따른 분기
 		    switch(input) {
 		        case 1:
-	        	RecommandView.show(currentUser);
+		        	RecommandView.show(currentUser);
 		        	break;
 		        case 2:
 		        	MatchView.inputFriendNameView();
@@ -60,6 +60,7 @@ public class MenuView {
 		        	break;
 		        case 9:
 		        	System.out.println("프로그램을 종료합니다. 안녕히 가세요!");
+		        	System.exit(0);
 		        	return;
 		        default:
 		        	System.out.println("⚠️ 올바른 메뉴 번호를 입력해주세요.");
