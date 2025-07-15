@@ -2,10 +2,8 @@ package controller;
 
 import java.util.ArrayList;
 
-import model.Model;
 import model.Student;
-import view.FailView;
-import view.MbtiView;
+import model.StudentDAO;
 
 public class MbtiController {
 	
@@ -13,7 +11,7 @@ public class MbtiController {
 		
 		ArrayList<String> sameMbti = new ArrayList<>();
 		
-		for(Student friend: Model.getModel().getStudents()) {
+		for(Student friend: StudentDAO.getStudents()) {
 			if(currentUser.getMbti().equals(friend.getMbti()) && currentUser.getName() != friend.getName() ) {
 					sameMbti.add(friend.getName());
 
