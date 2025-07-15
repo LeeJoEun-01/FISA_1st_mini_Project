@@ -1,30 +1,28 @@
 package view;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
-import controller.MainController;
 import controller.StudyController;
+import util.ConsoleScanner;
 
 public class StudyView {
 	
 	public static void StudyNameInput() {
-		Scanner sc = new Scanner(System.in);
-		
 		System.out.println("하고 싶은 스터디를 입력하시오:");
 		
 		//스터디 입력
-		String studyName = sc.nextLine();
+		String studyName = ConsoleScanner.SCANNER.nextLine();
 		StudyController.searchStudy(studyName);
 	}
 
-	public static void print(String studyName, String[] personName) {
+	public static void print(String studyName, ArrayList<String> data) {
         System.out.println("===============================");
         System.out.println("📚 " + studyName + " 스터디 멤버 추천");
         System.out.println("===============================");
         
-        for (int i = 0; i < personName.length; i++) {
-            System.out.print(personName[i]);
-            if (i != personName.length - 1) {
+        for (int i = 0; i < data.size(); i++) {
+            System.out.print(data.get(i));
+            if (i != data.size() - 1) {
                 System.out.print(", ");
             }
         }

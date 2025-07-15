@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import java.util.Properties;
 
@@ -24,7 +22,7 @@ public class DBUtil {
 			dbInfo.load(new FileInputStream("dbinfo.properties"));
 			Class.forName(dbInfo.getProperty("jdbc.driver"));
 			
-			System.out.println(dbInfo.getProperty("jdbc.id"));
+//			System.out.println(dbInfo.getProperty("jdbc.id"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

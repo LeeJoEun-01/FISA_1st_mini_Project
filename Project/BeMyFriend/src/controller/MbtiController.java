@@ -12,17 +12,13 @@ public class MbtiController {
 		ArrayList<String> sameMbti = new ArrayList<>();
 		
 		for(Student friend: StudentDAO.getStudents()) {
-			if(currentUser.getMbti().equals(friend.getMbti()) && currentUser.getName() != friend.getName() ) {
+			if(currentUser.getMbti().equals(friend.getMbti()) && !currentUser.getName().equals( friend.getName()) ) {
 					sameMbti.add(friend.getName());
-
 			}
 		}
-		
 		if (sameMbti == null) {
 			throw new Exception("같은 MBTI인 친구가 없어요ㅠㅠ");
 		}
-		
 		return sameMbti;
 	}
-
 }

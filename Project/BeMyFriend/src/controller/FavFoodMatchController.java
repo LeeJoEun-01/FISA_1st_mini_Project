@@ -1,29 +1,29 @@
-package controller;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import model.Model;
-import model.Student;
-
-public class FavFoodMatchController {
-
-	public static ArrayList<String> fintStudentsByFood(String foodName) throws Exception{
-		ArrayList<String> matched = new ArrayList<>();
-		
-		for (Student s : Model.getModel().getStudents()) {
-			for (String food : s.getFood()) {
-				if (food.equals(foodName)) {
-					matched.add(s.getName());
-					break;
-				}
-			}
-		}
-		
-		if (matched.isEmpty()) {
-			throw new Exception("😢 해당 음식을 좋아하는 친구가 없습니다. 주변 친구에게 함께 먹자고 권유해볼까요?");
-		}
-		
-		return matched;
-	}
-}
+//package controller;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import model.Model;
+//import model.Student;
+//
+//public class FavFoodMatchController {
+//
+//	public static ArrayList<String> fintStudentsByFood(String foodName) throws Exception{
+//		ArrayList<String> matched = new ArrayList<>();
+//		
+//		for (Student s : Model.getModel().getStudents()) {
+//			for (String food : s.getFood()) {
+//				if (food.equals(foodName)) {
+//					matched.add(s.getName());
+//					break;
+//				}
+//			}
+//		}
+//		
+//		if (matched.isEmpty()) {
+//			throw new Exception("😢 해당 음식을 좋아하는 친구가 없습니다. 주변 친구에게 함께 먹자고 권유해볼까요?");
+//		}
+//		
+//		return matched;
+//	}
+//}

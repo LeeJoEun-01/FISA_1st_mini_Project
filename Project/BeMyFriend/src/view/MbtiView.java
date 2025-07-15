@@ -22,16 +22,10 @@ public class MbtiView {
 	        	}
 	        	else {
 	        		System.out.print(sameMbtiUsers.get(i) + ", ");
-	        		
 	        	}
 	        }
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
-		
 	}
-
-	
-
 }
