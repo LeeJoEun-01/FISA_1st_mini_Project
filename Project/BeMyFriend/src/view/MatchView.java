@@ -11,15 +11,16 @@ public class MatchView {
 
 	    String resultMessage = MatchController.handleCompatibility(friendName);
 	    
-	    if (resultMessage != null) {
-	        System.out.println(resultMessage);
-	        try {
-				MenuView.displayMenu();
-			} catch (Exception e) {
-				e.printStackTrace();
-				StartView.viewStart();
-			}
-	    }
+        if (resultMessage == null) {
+            System.out.println("해당 이름의 친구를 찾을 수 없습니다.");
+            // MatchView 재호출 (다시 입력)
+            inputFriendNameView();
+        } else {
+            // 성공 결과 출력
+            System.out.println(resultMessage);
+            // 메뉴로 돌아가기
+            MenuView.displayMenu();
+        }
 	}
 
 }

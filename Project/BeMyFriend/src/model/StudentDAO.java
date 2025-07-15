@@ -203,4 +203,29 @@ public class StudentDAO {
 
 	    return score;
 	}
+	
+	public static ArrayList<String> findStudentsByFood(String foodName) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+
+	    ArrayList<String> matched = new ArrayList<>();
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "SELECT name FROM student WHERE ',' || food || ',' LIKE '%,' || ? || ',%'"
+	        );
+	        pstmt.setString(1, foodName);
+
+	        rs = pstmt.executeQuery();
+	        while (rs.next()) {
+	            matched.add(rs.getString("name"));
+	        }
+	    } finally {
+	        DBUtil.close(conn, pstmt, rs);
+	    }
+
+	    return matched;
+	}
+
 }
