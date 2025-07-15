@@ -1,0 +1,13 @@
+package view;
+
+import model.Model;
+
+public class StartView {
+	private static final Model model = Model.getModel();
+
+	public static void main(String[] args) {
+		
+		System.out.println(model);
+	}
+
+}

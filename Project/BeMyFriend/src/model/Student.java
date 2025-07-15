@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+
 public class Student extends Person {
     String mbti;
     ArrayList<String> hates;

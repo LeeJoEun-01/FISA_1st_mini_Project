@@ -1,0 +1,13 @@
+package view;
+
+public class StudyView {
+
+	public static void print(String studyName, String[] personName) {
+		System.out.println(studyName+"스터디 멤버를 추천드리겠습니다.");
+		for(String name: personName) {
+			System.out.println(name);
+		}
+		System.out.println("이상입니다.");
+	}
+
+}

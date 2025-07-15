@@ -1,0 +1,36 @@
+
+package controller;
+
+import model.Model;
+import model.domain.Employee;
+import view.FailView;
+import view.SuccessView;
+
+public class Controller {
+	private static final Model model = Model.getModel();
+	
+	//step01 - 예외 학습 전 
+	public static void getEmployees(){
+		Employee[] datas = model.getEmployees();
+		
+		if(datas.length != 0 ) {
+			SuccessView.print("사원들 정보입니다.", datas);
+		}else {
+			FailView.print("사원이 미 존재합니다.");
+		}		
+	}
+	
+	//Controller의 특정 부서에 속한 사원만 검색 메소드
+	public static void getDeptnoEmployee(int deptno) {
+		
+		Employee[] datas = model.getSameDeptEmployees(deptno);
+		
+		if(datas.length != 0 ) {
+			SuccessView.print(deptno + "부서의 사원들 정보입니다.", datas);
+		}else {
+			FailView.print(deptno + "부서에 소속된 사원이 미 존재합니다.");
+		}		
+		
+	}
+	
+}

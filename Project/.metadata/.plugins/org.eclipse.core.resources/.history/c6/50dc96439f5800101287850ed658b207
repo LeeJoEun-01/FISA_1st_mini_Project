@@ -1,0 +1,13 @@
+package model;
+
+public class Databases {
+	private static Student [] students;
+	
+	static {
+		// 학생들 DB
+	}
+	
+	Student [] getStudents() {
+		return students;
+	}
+}

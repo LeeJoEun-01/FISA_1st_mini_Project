@@ -1,0 +1,18 @@
+package view;
+
+import model.Model;
+
+public class StartView {
+	private static final Model model = Model.getModel();
+
+	public static void main(String[] args) {
+		
+		try {
+			System.out.println(model.getStudents());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

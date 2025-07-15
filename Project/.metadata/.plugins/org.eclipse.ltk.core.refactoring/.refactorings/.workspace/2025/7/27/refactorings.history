@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;step03_MVCEmployee_t&apos; to &apos;BeMyFriend&apos;" description="Rename resource &apos;step03_MVCEmployee_t&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/step03_MVCEmployee_t" name="BeMyFriend" stamp="1751600541683" updateReferences="true"/>
+</session>

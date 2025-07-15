@@ -1,0 +1,14 @@
+package model;
+
+public class Databases {
+	private static Student [] students;
+	
+	static {
+		// 학생들 DB
+		students = new Studnet[] {}
+	}
+	
+	Student [] getStudents() {
+		return students;
+	}
+}

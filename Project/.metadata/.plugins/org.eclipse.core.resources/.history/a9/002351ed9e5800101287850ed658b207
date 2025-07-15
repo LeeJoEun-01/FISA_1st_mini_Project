@@ -1,0 +1,22 @@
+package model;
+
+public class Model {
+	private Databases db = new Databases();
+	
+	private static Model model = new Model();
+	
+	private Model() {}
+	
+	public static Model getModel() {
+		return model;
+	}
+	
+	public Student[] getStudents() throws Exception {
+		Student[] students = db.getStudents();
+		
+		if (students.length == 0):
+			throw new Exception("직원 정보가 없습니다.(예외상황)");
+	}
+	
+	
+}

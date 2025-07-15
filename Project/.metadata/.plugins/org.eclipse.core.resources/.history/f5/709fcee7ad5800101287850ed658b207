@@ -1,0 +1,77 @@
+package model;
+
+public class Model {
+	private Databases db = new Databases();
+	
+	private static Model model = new Model();
+	
+	private Model() {}
+	
+	private static Student currentUser; // 현재 사용자 정보
+	
+	// 현재 사용자 설정
+	public static void setCurrentUser(Student user) {
+		currentUser = user;
+	}
+	
+	// 현재 사용자 가져오기
+	public static Student getCurrentUser() {
+		return currentUser;
+	}
+	
+	public static Model getModel() {
+		return model;
+	}
+	
+	public Student[] getStudents() throws Exception {
+		Student[] students = db.getStudents();
+		
+		if (students.length == 0) {
+			throw new Exception("학생 정보가 없습니다.(예외상황)");
+		} else {
+			return students;
+		}
+	}
+	
+	public String[] searchStudy(String studyName) throws Exception {
+		// 매개변수로 스터디 이름을 받아서
+		// 해당 스터디를 희망하는 사람의 이름을 찾아준다.
+		
+		Student [] students = db.getStudents();
+		
+		// 해당 스터디를 희망하는 사람의 수
+		int count = 0;
+		for(Student stu: students) {
+			for(String s: stu.getStudy()) {
+				System.out.println("=-=-=-=-=-=-=");
+				System.out.println(s);
+				if(s == studyName) {
+					count ++;
+					break;
+				}
+			}
+		}
+		
+		if (count == 0) {
+			throw new Exception(studyName+" 스터디를 희망하는 사람이 없습니다.");
+		}
+		
+		int index = 0;
+		String [] studyGroup = new String[count];
+		for(Student stu: students) {
+			for(String s: stu.getStudy()) {
+				if(s == studyName) {
+					studyGroup[index] = stu.getName();
+					index ++;
+					break;
+				}
+			}
+		}
+		
+		return studyGroup;
+	}
+	
+	
+	
+	
+}
