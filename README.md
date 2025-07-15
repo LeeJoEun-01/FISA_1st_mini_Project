@@ -175,5 +175,27 @@ src/
 이번 프로젝트는 기존에 자바 내부에서 직접 객체(Student) 배열을 생성해 사용하던 방식을 벗어나, Oracle 데이터베이스를 활용한 외부 데이터 관리 및 JDBC 연동 실습을 목표로 합니다.
 
 ## 기존 구조와 새로 적용한 구조
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/9ecd46cd-1372-488e-9d81-55cde14b6c03" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/f2690ab3-6b25-4aca-810a-d14359630317" />
+
+### ✅ 클래스 역할
+- `DBUtil.java`<br>
+  : **Oracle DB와의 연결(Connection) 및 자원 해제(close) 기능을 담당하는 데이터베이스 유틸리티 클래스**입니다.<br>
+  dbinfo.properties에서 DB 접속 정보를 읽어 JDBC 연결을 초기화하며, 연결/해제 처리를 간편하게 도와줍니다.
+
+- `StudentDAO.java`<br>
+  : student 테이블과 관련된 조회, 검색, 매칭, 호환도 계산 등의 로직을 수행하는 **데이터 액세스 객체(DAO)**입니다.<br>
+  현재 사용자 관리, 이름 기반 조회, 조건 검색 등 다양한 DB 연동 기능을 포함합니다.
+<br>
+---
+
+### 🔗 Oracle DB와 연동해서 사용하는 이점
+- 실제 DB 기반 데이터 관리로 객체 배열보다 확장성과 유지보수성이 뛰어남
+- SQL을 활용한 조건별 검색/필터링/집계 가능 → 메모리 연산보다 성능 및 유연성 우수
+- JDBC 기반으로 데이터를 동적으로 로딩/저장할 수 있어 데이터 변경에도 유연하게 대응 가능
+
+### 🕹️ 데이터 삽입, 수정, 삭제 메뉴 추가
+
+| 학생 추가 | 학생 정보 수정 | 학생 삭제 |
+| ---- | ---- | ----|
+|<img width="382" alt="image" src="https://github.com/user-attachments/assets/64d6fc2e-9444-407d-b2de-e2d0d0c9f0fd" /> | <img width="382" alt="image" src="https://github.com/user-attachments/assets/98b1afa6-04cd-4995-a5c5-4bd22f530bbc" /> | <img width="382" alt="image" src="https://github.com/user-attachments/assets/032c542a-ce02-47e0-ae10-3925f8c1b34a" /> |
 
