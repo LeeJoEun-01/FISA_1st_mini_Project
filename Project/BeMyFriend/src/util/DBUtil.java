@@ -22,7 +22,7 @@ public class DBUtil {
 			dbInfo.load(new FileInputStream("dbinfo.properties"));
 			Class.forName(dbInfo.getProperty("jdbc.driver"));
 			
-			System.out.println(dbInfo.getProperty("jdbc.id"));
+//			System.out.println(dbInfo.getProperty("jdbc.id"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

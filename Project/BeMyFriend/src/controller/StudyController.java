@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.StudentDAO;
 import view.FailView;
 import view.StudyView;
@@ -8,7 +10,7 @@ public class StudyController {
 	private static final StudentDAO model = StudentDAO.getModel() ;
 	
 	public static void searchStudy(String studyName) {
-		String[] data = null;
+		ArrayList<String> data = null;
 		try {
 			data = model.getStudyWithMe(studyName);
 			StudyView.print(studyName, data);
