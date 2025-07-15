@@ -10,32 +10,24 @@ import view.MenuView;
 public class MainController {
 	
 	public static void handleNameInput(String name) {
-		String found = null;
-		
 		try {
-			StudentDAO.getModel();
-			// 이름으로 기존 학생 db에서 사용자 검색
-			ArrayList<String> datas = StudentDAO.getAllStudent();
-			for (String studentName : datas) {
-				if (studentName.equals(name)) {
-					found = studentName;
-					break;
-				}
-			}
-			
-			// 못 찾으면 예외처리
-			if (found == null) {
-				throw new Exception("해당 이름의 학생이 없습니다.");
-			}
-			
-			// 찾으면 currentUser로 저장
-//			StudentDAO.setCurrentUser(found);
-			MenuView.displayMenu();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
-		
+            // DB에서 학생 조회
+            Student foundStudent = StudentDAO.findStudentByName(name);
+
+            // 없으면 예외 처리
+            if (foundStudent == null) {
+                throw new Exception("해당 이름의 학생이 없습니다.");
+            }
+
+            // 있으면 currentUser에 저장
+            StudentDAO.setCurrentUser(foundStudent);
+
+            // 다음 메뉴로 이동
+            MenuView.displayMenu();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
 	}
 }
