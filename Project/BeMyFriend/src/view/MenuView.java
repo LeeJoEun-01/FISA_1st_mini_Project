@@ -22,7 +22,10 @@ public class MenuView {
 		    System.out.println("║ 3. MBTI로 친구 찾기              ║");
 		    System.out.println("║ 4. 나의 스터디 매칭               ║");
 		    System.out.println("║ 5. 최애 음식 매칭                ║");
-		    System.out.println("║ 6. 종료                        ║");
+		    System.out.println("║ 6. 학생 정보 추가                ║");
+		    System.out.println("║ 7. 학생 정보 수정                ║");
+		    System.out.println("║ 8. 학생 정보 삭제                ║");
+		    System.out.println("║ 9. 종료                       ║");
 		    System.out.println("╚══════════════════════════════╝");
 		    System.out.println();
 		    System.out.print("메뉴 번호를 선택해주세요 (1~6): ");
@@ -47,6 +50,11 @@ public class MenuView {
 		        	FavFoodView.favFoodMatch();
 		        	break;
 		        case 6:
+		        	StudentAddView.inputNewStudent();
+		        	break;
+		        case 7:
+		        case 8:
+		        case 9:
 		        	System.out.println("프로그램을 종료합니다. 안녕히 가세요!");
 		        	return;
 		        default:

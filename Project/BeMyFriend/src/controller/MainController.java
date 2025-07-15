@@ -30,4 +30,8 @@ public class MainController {
             System.out.println(e.getMessage());
         }
 	}
+	
+	public static void addStudent(Student student) throws Exception {
+		StudentDAO.insertStudent(student);
+	}
 }

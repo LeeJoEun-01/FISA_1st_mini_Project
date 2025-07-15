@@ -228,4 +228,28 @@ public class StudentDAO {
 	    return matched;
 	}
 
+	public static void insertStudent(Student student) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "INSERT INTO student (name, age, mbti, hates, favorites, study, jobs, food) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+	        );
+	        pstmt.setString(1, student.getName());
+	        pstmt.setInt(2, student.getAge());
+	        pstmt.setString(3, student.getMbti());
+	        pstmt.setString(4, String.join(",", student.getHates()));
+	        pstmt.setString(5, String.join(",", student.getFavorites()));
+	        pstmt.setString(6, String.join(",", student.getStudy()));
+	        pstmt.setString(7, String.join(",", student.getJobs()));
+	        pstmt.setString(8, String.join(",", student.getFood()));
+
+	        pstmt.executeUpdate();
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+
 }
