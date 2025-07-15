@@ -35,7 +35,7 @@ public class MenuView {
 		    // 입력한 수에 따른 분기
 		    switch(input) {
 		        case 1:
-//	        	RecommandView.show(currentUser);
+	        	RecommandView.show(currentUser);
 		        	break;
 		        case 2:
 		        	MatchView.inputFriendNameView();
