@@ -30,4 +30,23 @@ public class MainController {
             System.out.println(e.getMessage());
         }
 	}
+	
+	public static void addStudent(Student student) throws Exception {
+		StudentDAO.insertStudent(student);
+	}
+	
+	public static void updateStudent(Student student) throws Exception {
+	    StudentDAO.updateStudent(student);
+	}
+
+	public static void deleteCurrentUser() throws Exception {
+	    Student current = StudentDAO.getCurrentUser();
+
+	    if (current == null) {
+	        throw new Exception("현재 로그인한 사용자가 없습니다.");
+	    }
+
+	    StudentDAO.deleteStudent(current.getName());
+	    StudentDAO.setCurrentUser(null);
+	}
 }
