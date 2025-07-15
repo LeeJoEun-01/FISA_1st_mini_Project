@@ -1,20 +1,17 @@
 package view;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import controller.MainController;
 import controller.StudyController;
+import util.ConsoleScanner;
 
 public class StudyView {
 	
 	public static void StudyNameInput() {
-		Scanner sc = new Scanner(System.in);
-		
 		System.out.println("하고 싶은 스터디를 입력하시오:");
 		
 		//스터디 입력
-		String studyName = sc.nextLine();
+		String studyName = ConsoleScanner.SCANNER.nextLine();
 		StudyController.searchStudy(studyName);
 	}
 

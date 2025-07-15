@@ -1,6 +1,5 @@
 package view;
 
-import java.util.Scanner;
 import model.StudentDAO;
 import util.ConsoleScanner;
 import model.Student;
