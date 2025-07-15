@@ -44,7 +44,7 @@ public class MenuView {
 			        StudyView.StudyNameInput();
 			        break;
 		        case 5:
-//	        	FavFoodView.favFoodMatch();
+		        	FavFoodView.favFoodMatch();
 		        	break;
 		        case 6:
 		        	System.out.println("프로그램을 종료합니다. 안녕히 가세요!");
