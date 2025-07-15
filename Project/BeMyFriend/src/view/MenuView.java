@@ -1,8 +1,8 @@
 package view;
 
+import model.Student;
 import model.StudentDAO;
 import util.ConsoleScanner;
-import model.Student;
 
 public class MenuView {
 	public static void displayMenu() {
@@ -35,13 +35,13 @@ public class MenuView {
 		    // 입력한 수에 따른 분기
 		    switch(input) {
 		        case 1:
-//	        	RecommandView.show(currentUser);
+	        	RecommandView.show(currentUser);
 		        	break;
 		        case 2:
 		        	MatchView.inputFriendNameView();
 		        	break;
 		        case 3:
-//	        	MbtiView.mbtiFriends();
+		        	MbtiView.mbtiFriends();
 		        	break;
 		        case 4:
 			        StudyView.StudyNameInput();
