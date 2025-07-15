@@ -22,16 +22,19 @@ public class RecommandView {
 	            System.out.println("🎂 나이           : " + student.getAge() + "세");
 	            System.out.println("🧠 MBTI          : " + student.getMbti());
 	            System.out.print("💔 싫어하는 것      : ");
+	            
 	            for(String h: student.getHates()) {
 	            	System.out.print(h+" ");
 	            }
 	            System.out.println();
+	            
 	            //+ Array.toString((Array)student.getHates()));
 	            System.out.print("💖 좋아하는 것      : ");
 	            for(String f: student.getFavorites()) {
 	            	System.out.print(f+" ");
 	            }
 	            System.out.println();
+	            
 	            System.out.print("📚 공부 분야       : ");
 	            for(String s: student.getStudy()) {
 	            	System.out.print(s+" ");
@@ -46,7 +49,8 @@ public class RecommandView {
 	            System.out.println("────────────────────────────────────");
 	        }
     	}catch(Exception e) {
-    		System.out.println(e);
+    		System.out.println(e.getMessage());
+    		e.printStackTrace();
     	}
     }
 

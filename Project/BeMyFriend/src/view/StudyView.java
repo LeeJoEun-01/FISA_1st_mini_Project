@@ -7,7 +7,7 @@ import util.ConsoleScanner;
 
 public class StudyView {
 	
-	public static void StudyNameInput() {
+	public static void studyNameInput() {
 		System.out.println("하고 싶은 스터디를 입력하시오:");
 		
 		//스터디 입력
@@ -20,9 +20,10 @@ public class StudyView {
         System.out.println("📚 " + studyName + " 스터디 멤버 추천");
         System.out.println("===============================");
         
-        for (int i = 0; i < data.size(); i++) {
+        int size = data.size();
+        for (int i = 0; i < size; i++) {
             System.out.print(data.get(i));
-            if (i != data.size() - 1) {
+            if (i != size - 1) {
                 System.out.print(", ");
             }
         }

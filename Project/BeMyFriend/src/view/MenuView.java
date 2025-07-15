@@ -44,7 +44,7 @@ public class MenuView {
 		        	MbtiView.mbtiFriends();
 		        	break;
 		        case 4:
-			        StudyView.StudyNameInput();
+			        StudyView.studyNameInput();
 			        break;
 		        case 5:
 		        	FavFoodView.favFoodMatch();

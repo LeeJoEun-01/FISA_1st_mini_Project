@@ -39,9 +39,7 @@ public class StudentDAO {
 
         try {
             conn = DBUtil.getConnection();
-            pstmt = conn.prepareStatement(
-                "SELECT name, age, mbti, hates, favorites, study, jobs, food FROM student WHERE name = ?"
-            );
+            pstmt = conn.prepareStatement("SELECT name, age, mbti, hates, favorites, study, jobs, food FROM student WHERE name = ?");
             pstmt.setString(1, name);
 
             rs = pstmt.executeQuery();
