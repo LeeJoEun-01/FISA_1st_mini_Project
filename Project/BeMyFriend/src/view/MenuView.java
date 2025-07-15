@@ -53,7 +53,11 @@ public class MenuView {
 		        	StudentAddView.inputNewStudent();
 		        	break;
 		        case 7:
+		        	StudentUpdateView.updateCurrentUser();
+		        	break;
 		        case 8:
+		        	StudentDeleteView.deleteCurrentUser();
+		        	break;
 		        case 9:
 		        	System.out.println("프로그램을 종료합니다. 안녕히 가세요!");
 		        	return;
