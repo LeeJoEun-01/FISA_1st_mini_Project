@@ -230,4 +230,70 @@ public class StudentDAO {
 	    return matched;
 	}
 
+	public static void insertStudent(Student student) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "INSERT INTO student (name, age, mbti, hates, favorites, study, jobs, food) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+	        );
+	        pstmt.setString(1, student.getName());
+	        pstmt.setInt(2, student.getAge());
+	        pstmt.setString(3, student.getMbti());
+	        pstmt.setString(4, String.join(",", student.getHates()));
+	        pstmt.setString(5, String.join(",", student.getFavorites()));
+	        pstmt.setString(6, String.join(",", student.getStudy()));
+	        pstmt.setString(7, String.join(",", student.getJobs()));
+	        pstmt.setString(8, String.join(",", student.getFood()));
+
+	        pstmt.executeUpdate();
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+
+	public static void updateStudent(Student student) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "UPDATE student SET age=?, mbti=?, hates=?, favorites=?, study=?, jobs=?, food=? WHERE name=?"
+	        );
+	        pstmt.setInt(1, student.getAge());
+	        pstmt.setString(2, student.getMbti());
+	        pstmt.setString(3, String.join(",", student.getHates()));
+	        pstmt.setString(4, String.join(",", student.getFavorites()));
+	        pstmt.setString(5, String.join(",", student.getStudy()));
+	        pstmt.setString(6, String.join(",", student.getJobs()));
+	        pstmt.setString(7, String.join(",", student.getFood()));
+	        pstmt.setString(8, student.getName());
+
+	        pstmt.executeUpdate();
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+	
+	public static void deleteStudent(String name) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement("DELETE FROM student WHERE name = ?");
+	        pstmt.setString(1, name);
+	        int result = pstmt.executeUpdate();
+
+	        if (result == 0) {
+	            throw new Exception("삭제할 학생을 찾을 수 없습니다.");
+	        }
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+
 }
