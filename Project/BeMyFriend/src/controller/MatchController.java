@@ -29,7 +29,7 @@ public class MatchController {
 
         } catch (Exception e) {
             // 에러 메시지 넘겨주기
-            return e.getMessage();
+            return null;
         }
     }
 }

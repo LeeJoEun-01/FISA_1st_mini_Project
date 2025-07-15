@@ -5,11 +5,12 @@ import util.ConsoleScanner;
 import model.Student;
 
 public class MenuView {
-	public static void displayMenu() throws Exception {
+	public static void displayMenu() {
 		// 현재 사용자 이름 가져와서 인사
 		Student currentUser = StudentDAO.getCurrentUser();
 		
 		while(true) {
+			System.out.println();
 			System.out.println(currentUser.getName() + "님 안녕하세요!");
 			System.out.println("원하시는 메뉴를 선택해주세요.");
 			System.out.println();
@@ -26,6 +27,7 @@ public class MenuView {
 		    System.out.println();
 		    System.out.print("메뉴 번호를 선택해주세요 (1~6): ");
 			int input = ConsoleScanner.SCANNER.nextInt();
+			ConsoleScanner.SCANNER.nextLine();
 		    
 		    // 입력한 수에 따른 분기
 		    switch(input) {
@@ -33,7 +35,7 @@ public class MenuView {
 //	        	RecommandView.show(currentUser);
 		        	break;
 		        case 2:
-	        	MatchView.inputFriendNameView();
+		        	MatchView.inputFriendNameView();
 		        	break;
 		        case 3:
 //	        	MbtiView.mbtiFriends();
