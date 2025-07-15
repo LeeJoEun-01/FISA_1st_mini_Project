@@ -1,36 +1,31 @@
 package controller;
 
+import model.StudentDAO;
+
 import model.Student;
 import view.MenuView;
 
 public class MainController {
 	
 	public static void handleNameInput(String name) {
-		Student found = null;
-		
 		try {
-			// 이름으로 기존 학생 db에서 사용자 검색
-			Student[] datas = Model.getModel().getStudents();
-			for (Student s : datas) {
-				if (s.getName().equals(name)) {
-					found = s;
-					break;
-				}
-			}
-			
-			// 못 찾으면 예외처리
-			if (found == null) {
-				throw new Exception("해당 이름의 학생이 없습니다.");
-			}
-			
-			// 찾으면 currentUser로 저장
-			Model.setCurrentUser(found);
-			MenuView.displayMenu();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
-		
+            // DB에서 학생 조회
+            Student foundStudent = StudentDAO.findStudentByName(name);
+
+            // 없으면 예외 처리
+            if (foundStudent == null) {
+                throw new Exception("해당 이름의 학생이 없습니다.");
+            }
+
+            // 있으면 currentUser에 저장
+            StudentDAO.setCurrentUser(foundStudent);
+
+            // 다음 메뉴로 이동
+            MenuView.displayMenu();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
 	}
 }
