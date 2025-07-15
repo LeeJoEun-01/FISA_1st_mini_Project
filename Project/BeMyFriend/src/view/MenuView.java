@@ -5,11 +5,12 @@ import util.ConsoleScanner;
 import model.Student;
 
 public class MenuView {
-	public static void displayMenu() throws Exception {
+	public static void displayMenu() {
 		// 현재 사용자 이름 가져와서 인사
 		Student currentUser = StudentDAO.getCurrentUser();
 		
 		while(true) {
+			System.out.println();
 			System.out.println(currentUser.getName() + "님 안녕하세요!");
 			System.out.println("원하시는 메뉴를 선택해주세요.");
 			System.out.println();
@@ -21,11 +22,15 @@ public class MenuView {
 		    System.out.println("║ 3. MBTI로 친구 찾기              ║");
 		    System.out.println("║ 4. 나의 스터디 매칭               ║");
 		    System.out.println("║ 5. 최애 음식 매칭                ║");
-		    System.out.println("║ 6. 종료                        ║");
+		    System.out.println("║ 6. 학생 정보 추가                ║");
+		    System.out.println("║ 7. 학생 정보 수정                ║");
+		    System.out.println("║ 8. 학생 정보 삭제                ║");
+		    System.out.println("║ 9. 종료                       ║");
 		    System.out.println("╚══════════════════════════════╝");
 		    System.out.println();
 		    System.out.print("메뉴 번호를 선택해주세요 (1~6): ");
 			int input = ConsoleScanner.SCANNER.nextInt();
+			ConsoleScanner.SCANNER.nextLine();
 		    
 		    // 입력한 수에 따른 분기
 		    switch(input) {
@@ -33,7 +38,7 @@ public class MenuView {
 	        	RecommandView.show(currentUser);
 		        	break;
 		        case 2:
-	        	MatchView.inputFriendNameView();
+		        	MatchView.inputFriendNameView();
 		        	break;
 		        case 3:
 //	        	MbtiView.mbtiFriends();
@@ -42,9 +47,18 @@ public class MenuView {
 			        StudyView.StudyNameInput();
 			        break;
 		        case 5:
-//"	        	FavFoodView.favFoodMatch();
+		        	FavFoodView.favFoodMatch();
 		        	break;
 		        case 6:
+		        	StudentAddView.inputNewStudent();
+		        	break;
+		        case 7:
+		        	StudentUpdateView.updateCurrentUser();
+		        	break;
+		        case 8:
+		        	StudentDeleteView.deleteCurrentUser();
+		        	break;
+		        case 9:
 		        	System.out.println("프로그램을 종료합니다. 안녕히 가세요!");
 		        	return;
 		        default:

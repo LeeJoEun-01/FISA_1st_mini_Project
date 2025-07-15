@@ -204,37 +204,129 @@ public class StudentDAO {
 	    return score;
 	}
 
-    public static Student getRandomStudent() throws Exception {
-    	Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		Student friend = null;
-		
-        try {
-        		conn = DBUtil.getConnection();
-        		pstmt = conn.prepareStatement("SELECT stdno, name, age, mbti, hates, favorites, study, jobs, food FROM (SELECT * FROM student ORDER BY DBMS_RANDOM.VALUE ) WHERE ROWNUM = 1 ");
-     	        rs = pstmt.executeQuery();
+	 public static Student getRandomStudent() throws Exception {
+	    	Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			Student friend = null;
+			
+	        try {
+	        		conn = DBUtil.getConnection();
+	        		pstmt = conn.prepareStatement("SELECT stdno, name, age, mbti, hates, favorites, study, jobs, food FROM (SELECT * FROM student ORDER BY DBMS_RANDOM.VALUE ) WHERE ROWNUM = 1 ");
+	     	        rs = pstmt.executeQuery();
 
-            if (rs.next()) {
-            	 friend = new Student(
-    	                rs.getString("name"),
-    	                rs.getInt("age"),
-    	                rs.getString("mbti"),
-    	                rs.getString("hates").split(","),
-    	                rs.getString("favorites").split(","),
-    	                rs.getString("study").split(","),
-    	                rs.getString("jobs").split(","),
-    	                rs.getString("food").split(",")
-    	            );
-            } else {
-                throw new Exception("추천할 학생이 없어요 ㅠㅠ");
-            }
+	            if (rs.next()) {
+	            	 friend = new Student(
+	    	                rs.getString("name"),
+	    	                rs.getInt("age"),
+	    	                rs.getString("mbti"),
+	    	                rs.getString("hates").split(","),
+	    	                rs.getString("favorites").split(","),
+	    	                rs.getString("study").split(","),
+	    	                rs.getString("jobs").split(","),
+	    	                rs.getString("food").split(",")
+	    	            );
+	            } else {
+	                throw new Exception("추천할 학생이 없어요 ㅠㅠ");
+	            }
 
-        } catch (SQLException e) {
-            throw new Exception("DB 오류: " + e.getMessage());
-        }
-		return friend;
-    }
+	        } catch (SQLException e) {
+	            throw new Exception("DB 오류: " + e.getMessage());
+	        }
+			return friend;
+	    }
+
+	
+	public static ArrayList<String> findStudentsByFood(String foodName) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+
+	    ArrayList<String> matched = new ArrayList<>();
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "SELECT name FROM student WHERE ',' || food || ',' LIKE '%,' || ? || ',%'"
+	        );
+	        pstmt.setString(1, foodName);
+
+	        rs = pstmt.executeQuery();
+	        while (rs.next()) {
+	            matched.add(rs.getString("name"));
+	        }
+	    } finally {
+	        DBUtil.close(conn, pstmt, rs);
+	    }
+
+	    return matched;
+	}
+
+	public static void insertStudent(Student student) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "INSERT INTO student (name, age, mbti, hates, favorites, study, jobs, food) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+	        );
+	        pstmt.setString(1, student.getName());
+	        pstmt.setInt(2, student.getAge());
+	        pstmt.setString(3, student.getMbti());
+	        pstmt.setString(4, String.join(",", student.getHates()));
+	        pstmt.setString(5, String.join(",", student.getFavorites()));
+	        pstmt.setString(6, String.join(",", student.getStudy()));
+	        pstmt.setString(7, String.join(",", student.getJobs()));
+	        pstmt.setString(8, String.join(",", student.getFood()));
+
+	        pstmt.executeUpdate();
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+
+	public static void updateStudent(Student student) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement(
+	            "UPDATE student SET age=?, mbti=?, hates=?, favorites=?, study=?, jobs=?, food=? WHERE name=?"
+	        );
+	        pstmt.setInt(1, student.getAge());
+	        pstmt.setString(2, student.getMbti());
+	        pstmt.setString(3, String.join(",", student.getHates()));
+	        pstmt.setString(4, String.join(",", student.getFavorites()));
+	        pstmt.setString(5, String.join(",", student.getStudy()));
+	        pstmt.setString(6, String.join(",", student.getJobs()));
+	        pstmt.setString(7, String.join(",", student.getFood()));
+	        pstmt.setString(8, student.getName());
+
+	        pstmt.executeUpdate();
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+	
+	public static void deleteStudent(String name) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+
+	    try {
+	        conn = DBUtil.getConnection();
+	        pstmt = conn.prepareStatement("DELETE FROM student WHERE name = ?");
+	        pstmt.setString(1, name);
+	        int result = pstmt.executeUpdate();
+
+	        if (result == 0) {
+	            throw new Exception("삭제할 학생을 찾을 수 없습니다.");
+	        }
+	    } finally {
+	        DBUtil.close(conn, pstmt);
+	    }
+	}
+
 }
 	
 
