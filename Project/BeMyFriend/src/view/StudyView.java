@@ -1,5 +1,6 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.MainController;
@@ -17,14 +18,14 @@ public class StudyView {
 		StudyController.searchStudy(studyName);
 	}
 
-	public static void print(String studyName, String[] personName) {
+	public static void print(String studyName, ArrayList<String> data) {
         System.out.println("===============================");
         System.out.println("📚 " + studyName + " 스터디 멤버 추천");
         System.out.println("===============================");
         
-        for (int i = 0; i < personName.length; i++) {
-            System.out.print(personName[i]);
-            if (i != personName.length - 1) {
+        for (int i = 0; i < data.size(); i++) {
+            System.out.print(data.get(i));
+            if (i != data.size() - 1) {
                 System.out.print(", ");
             }
         }
